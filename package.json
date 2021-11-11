@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "test:playwright": "./node_modules/.bin/playwright test test ./tests/playwright.spec.ts --headed",
+    "test:testcafe": "./node_modules/.bin/testcafe chrome ./tests/testcafe.spec.ts",
+    "test:cypress": "./node_modules/.bin/cypress run --spec ./tests/cypress.spec.js",
+    "web_server": "./node_modules/.bin/http-server"
+  },
+  "dependencies": {
+    "http-server": "^13.0.1",
+    "playwright": "^1.13.0",
+    "testcafe": "^1.15.0",
+    "webdriverio": "^7.8.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.13.0",
+    "cypress": "^8.0.0"
+  }
+}

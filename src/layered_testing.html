@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CSS Overlaying One DIV over Another DIV</title>
+<style> 
+    .container{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 20px;
+    }
+    .box{
+        width: 100%;
+        height: 100%;            
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;  /* for demo purpose  */
+    }
+    .button {
+        width: 100px;
+        height: 50px;
+        /* Center vertically and horizontally */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -25px 0 0 -50px; /* apply negative top and left margins to truly center the element */
+    }
+    .stack-top{
+        z-index: 9;
+        /* margin: 20px; for demo purpose  */
+    }
+</style>
+</head>
+<body>
+    <div id="example">
+        <div class="container">
+            <div class="box" style="background: red;">
+                <button class="button" type="button" id="button" onClick="clicked()">Click Me!</button>
+            </div>
+            <div class="box stack-top" style="background: blue;"></div>
+        </div>
+    </div>
+
+    <script>
+        function clicked() {
+            var tag = document.createElement("p");
+            tag.setAttribute("id", "clicked")
+            var text = document.createTextNode("Button was successfully clicked");
+            tag.appendChild(text);
+            var element = document.getElementById("example");
+            element.appendChild(tag);
+        }
+    </script>
+</body>
+</html>
